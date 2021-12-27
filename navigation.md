@@ -13,7 +13,7 @@
 
 
 
-
+[gimmick:themechooser](Choose theme)
 
 
 
