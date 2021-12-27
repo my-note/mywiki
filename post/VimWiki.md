@@ -66,6 +66,8 @@ hint! fdsssssfds
 2. two
 3. three
 
+:smile: this is smile
+:rose: 
 
 
 
