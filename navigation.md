@@ -3,7 +3,7 @@
 
 [Home](home.md)
 [About](about.md)
-[VimWiki](VimWiki.md)
+[VimWiki](post/VimWiki.md)
 
 
 
