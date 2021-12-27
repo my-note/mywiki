@@ -10,8 +10,6 @@
 
 
 
-
-
 [gimmick:themechooser](Choose theme)
 
 
