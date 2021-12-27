@@ -1,7 +1,7 @@
 {
     "useSideMenu": true,
     "lineBreaks": "gfm",
-    "additionalFooterText": "All content and images &copy; by John Doe",
+    "additionalFooterText": "",
     "anchorCharacter": "#",
     "title": "My-Wiki"
 }
