@@ -35,3 +35,27 @@ Trigger words are case insensitive, and must be one of the following:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
