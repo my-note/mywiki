@@ -6,6 +6,17 @@
 [插件管理](https://vimawesome.com/) 
 
 
+
+## unimpaired
+
+* `[q` => `:cprevious`
+* `]a` => `:next`
+* `[b` => `:bprevious`
+* `[<Space>` => `在当前行的前面添加新行`
+* `]<Space>` => `在当前行的后面添加新行`
+
+
+
 ## 对齐
 
 ### tabular
