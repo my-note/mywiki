@@ -6,6 +6,51 @@
 [插件管理](https://vimawesome.com/) 
 
 
+## 对齐
+
+### tabular
+
+
+* 使用
+
+    * 指定对齐`:Tab /=`: 通过`=`对齐
+    * 冒号对齐`:Tab /:`: 通过`:`对齐, 加强`:Tab /:\zs`
+
+* keys Shortcuts
+
+    ```
+    nmap <Leader>a= :Tabularize /=<CR>
+    vmap <Leader>a= :Tabularize /=<CR>
+    nmap <Leader>a: :Tabularize /:\zs<CR>
+    vmap <Leader>a: :Tabularize /:\zs<CR>
+    ```
+
+### vim-easy-align
+
+* Keys Shortcuts
+
+    ```
+    " Start interactive EasyAlign in visual mode (e.g. vipga)
+    xmap ga <Plug>(EasyAlign)
+
+    " Start interactive EasyAlign for a motion/text object (e.g. gaip)
+    nmap ga <Plug>(EasyAlign)
+    ```
+
+* e.g.
+
+    * `vipga=`: 可视模式执行
+
+        - visual-select inner paragraph
+        - Start EasyAlign command (ga)
+        - Align around =
+
+    * `gaip=`: 正常模式执行，`<operator><motion>`
+
+
+
+
+
 
 ## telescope
 
@@ -18,12 +63,12 @@
 
 * Keys Shortcuts
 
-    * <leader>ff: find files
-    * <leader>fg: grep string
-    * <leader>fb: buffers
-    * <leader>fh: tags
-    * <leader>sf: file browers
-    * <leader>/: current buffer 模糊搜索
+    * `<leader>ff`: find files
+    * `<leader>fg`: grep string
+    * `<leader>fb`: buffers
+    * `<leader>fh`: tags
+    * `<leader>sf`: file browers
+    * `<leader>/`: current buffer 模糊搜索
 
 * 依赖
 
