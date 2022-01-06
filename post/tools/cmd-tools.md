@@ -1,7 +1,25 @@
 # cmd-tools
 
 
+## ranger
 
+* i: 切换全屏预览
+* d: 删除
+* r: 打开
+* a: 重命名
+* 空格：选择文件
+    - dd：剪贴
+    - pp: 粘贴
+    - yy: 复制
+* 搜索：/
+* 显示隐藏的文件：<C-h>
+* 
+
+
+
+- [http://ranger.github.io/](http://ranger.github.io/)
+- [https://blog.csdn.net/lxyoucan/article/details/115671189](https://blog.csdn.net/lxyoucan/article/details/115671189) 
+- [https://github.com/alexanderjeurissen/ranger_devicons](https://github.com/alexanderjeurissen/ranger_devicons) 
 
 
 ## ag
@@ -60,7 +78,7 @@
         * fzf-autojump
         * z
     * themes:
-        * clearance
+        * clearance,正在使用
         * default
         * eclm
     
@@ -83,6 +101,8 @@
 
     * jorgebucaran/fisher
     * ilancosman/tide
+    * jorgebucaran/autopair.fish
+    * gazorby/fish-abbreviation-tips
 
 * Looking for plugins: [https://github.com/jorgebucaran/awsm.fish](https://github.com/jorgebucaran/awsm.fish) 
 
