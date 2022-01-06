@@ -1,5 +1,9 @@
 # cmd-tools
 
+## tmux
+
+* tmux
+* oh-my-tmux
 
 ## ranger
 
