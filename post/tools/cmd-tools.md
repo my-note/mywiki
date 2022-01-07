@@ -1,5 +1,56 @@
 # cmd-tools
 
+
+## bat
+
+```bash
+sudo apt install bat
+
+```
+
+
+
+## starship
+
+```toml
+
+
+[directory]
+#ディレクトリ表示
+truncation_length = 10
+truncate_to_repo = false
+
+[git_status]
+#Gitのステータス表示用アイコン
+conflicted = "💥"
+ahead = "🏎💨"
+behind = "😰"
+diverged = "😵"
+untracked = "🌚‍"
+stashed = "📦"
+modified = "📝"
+staged = '🔦'
+renamed = "🏷"
+deleted = "🗑"
+
+[[battery.display]]
+#バッテリーを表示するタイミング、表示する際の文字のスタイル
+threshold = 100
+style = "bold blue"
+
+[battery]
+#バッテリーの各状態のアイコン、上からフル充電、充電中、バッテリー残量低下
+full_symbol = "🤗"
+charging_symbol = "😌"
+discharging_symbol = "😨"
+
+[time]
+#時間の表示をオンにして12時間表示に
+disabled = false
+use_12hr = true
+
+```
+
 ## tmux
 
 * tmux
