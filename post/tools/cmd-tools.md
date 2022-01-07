@@ -12,6 +12,174 @@ sudo apt install bat
 
 ## starship
 
+
+```toml
+# Inserts a blank line between shell prompts
+add_newline = false
+# format = '$directory$battery'
+format = """
+[┌────────────>   ﰲ ](bold green)$battery $username $hostname $memory_usage $git_branch $git_commit $git_state $git_metrics $git_status 
+[└─>](bold green)$directory $package [$character](bold green)
+"""
+
+right_format = '$cmd_duration $time $status'
+
+
+
+[cmd_duration]
+min_time = 0
+show_milliseconds = true
+format = "[羽$duration](bold blue)"
+
+[username]
+show_always = true
+disabled = false
+format = "[ $user]($style) "
+
+[hostname]
+ssh_only = false
+disabled = false
+format = "[  $hostname]($style) "
+
+
+# Replace the "❯" symbol in the prompt with "➜"
+[character]
+success_symbol = "[➜](bold green) "
+error_symbol = "[✗](bold red) "
+
+
+# Disable the package module, hiding it from the prompt completely
+[package]
+disabled = false
+
+
+[directory]
+#ディレクトリ表示
+truncation_length = 10
+format = "[  $path]($style)[$read_only]($read_only_style) "
+truncate_to_repo = false
+# truncation_symbol = "…/"
+repo_root_style = "bold purple"
+home_symbol = "~"
+fish_style_pwd_dir_length = 0
+
+[directory.substitutions]
+"~/Document/mywiki" = "  "
+"src/com/long/java/path" = "mypath"
+
+
+
+
+[[battery.display]]
+#バッテリーを表示するタイミング、表示する際の文字のスタイル
+threshold = 100
+style = "bold blue"
+
+[battery]
+disabled = false
+
+[time]
+#時間の表示をオンにして12時間表示に
+disabled = false
+use_12hr = false
+format = "[ $time]($style) "
+
+
+
+
+[docker_context]
+format = "via [🐋 $context](blue bold)"
+only_with_files = false
+
+
+[fill]
+symbol = "-"
+style = "bold green"
+
+
+
+
+
+[git_branch]
+always_show_remote = true
+format = "[$symbol$branch]($style) [$remote_name](bold green) [ $remote_branch](bold blue)"
+symbol = " "
+
+
+
+[git_commit]
+commit_hash_length = 7
+format = "[\\($hash$tag\\)]($style) "
+only_detached = false
+tag_disabled = false
+tag_symbol = "🔖 "
+
+
+
+[git_metrics]
+disabled = false
+added_style = "bold blue"
+deleted_style = "bold red"
+only_nonzero_diffs = true
+format = '([+$added]($added_style) )([-$deleted]($deleted_style) )'
+
+
+
+
+[java]
+symbol = "☕ "
+format = "[${symbol}(${version} )]($style)"
+
+
+
+
+
+
+
+
+[memory_usage]
+disabled = false
+threshold = -1
+format = "$symbol [${ram}( | ${swap})]($style) "
+symbol = ""
+style = "bold dimmed white"
+
+
+
+[hg_branch]
+disabled = false
+
+
+
+
+
+
+# ~/.config/starship.toml
+
+[status]
+style = "bg:blue"
+symbol = "🔴"
+format = '[\[$symbol $common_meaning$signal_name$maybe_int\]]($style) '
+map_symbol = true
+disabled = false
+
+
+
+
+[git_status]
+ahead = "⇡ ${count}"
+diverged = "⇕⇡ ${ahead_count}⇣ ${behind_count}"
+behind = "⇣ ${count}"
+format = '([\[$all_status$ahead_behind\]]($style) )' 
+staged = '[++\($count\)](green)'
+up_to_date = "✓"
+
+
+
+
+
+```
+
 ```toml
 
 
