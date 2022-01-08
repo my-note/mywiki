@@ -236,9 +236,20 @@ use_12hr = true
     - yy: 复制
 * 搜索：/
 * 显示隐藏的文件：<C-h>
-* 
+* g/: 到/目录
+* gh: 到~目录
+* yn: 复制文件名
+* yp: 复制文件路径
+* p: 粘贴
+* dd: 剪贴
 
 
+* 初始化配置文件
+    * ranger --copy-config=all
+    * 配置文件位置：`.config/ranger/rc.conf`
+
+* [plugins](https://github.com/ranger/ranger/wiki/Plugins)
+* [image-previews](https://github.com/ranger/ranger/wiki/Image-Previews) 
 
 - [http://ranger.github.io/](http://ranger.github.io/)
 - [https://blog.csdn.net/lxyoucan/article/details/115671189](https://blog.csdn.net/lxyoucan/article/details/115671189) 
