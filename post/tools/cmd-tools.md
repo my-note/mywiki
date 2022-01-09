@@ -15,9 +15,16 @@ selection:
   save_to_clipboard: true
 # 右键粘贴
 mouse_bindings:
-  - { mouse: Right,             action: PasteSelection }
+  - { mouse: Right, action: Paste }
+key_bindings:
+  - { key: V, mods: Alt|Shift, action: Paste }
 window:
   decorations: full
+  startup_mode: Maximized
+# 透明度
+window.opacity: 0.9
+mouse:
+  hide_when_typing: true
 font:
   normal:
     family: "JetBrainsMonoNL Nerd Font"
@@ -32,7 +39,6 @@ font:
     family: "FiraCode Nerd Font"
     style: "bold italic"
   size: 13.0
-
 ```
 ### 主题
 
