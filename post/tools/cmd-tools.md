@@ -1,5 +1,17 @@
 # cmd-tools
 
+
+
+## 3 Cool Terminal Tools Written In Rust
+
+[https://antisyllogism.medium.com/3-cool-terminal-tools-written-in-rust-9ad70c225139](https://antisyllogism.medium.com/3-cool-terminal-tools-written-in-rust-9ad70c225139) 
+
+- mdcat: cargo install mdcat
+- lsd: npm install -g lsd
+- starship
+- bat: sudo apt install -y batcat
+- exa: cargo install exa
+
 ## alacritty
 
 ### 官网
