@@ -1,5 +1,43 @@
 # cmd-tools
 
+## alacritty
+
+### 官网
+[GitHut](https://hub.fastgit.org/alacritty/alacritty)
+
+### 配置
+
+* ~/.config/alacritty/alacritty.yml
+
+```yaml
+# 选中面板自动复制
+selection:
+  save_to_clipboard: true
+# 右键粘贴
+mouse_bindings:
+  - { mouse: Right,             action: PasteSelection }
+window:
+  decorations: full
+font:
+  normal:
+    family: "JetBrainsMonoNL Nerd Font"
+    style: light
+  bold:
+    family: "JetBrainsMonoNL Nerd Font"
+    style: regular
+  italic:
+    family: "FiraCode Nerd Font"
+    style: italic
+  bold_italic:
+    family: "FiraCode Nerd Font"
+    style: "bold italic"
+  size: 13.0
+
+```
+### 主题
+
+* npm install -g alacritty-themes
+* alacritty-theme，选择主题
 
 ## bat
 
