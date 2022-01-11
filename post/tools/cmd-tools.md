@@ -1,5 +1,14 @@
 # cmd-tools
 
+## st
+
+1. clone source
+2. 修改x11路径`config.mk`, 修改字体和shell`config.def.h` 
+3. 添加.gitignore 包含st、 st.o、 x.o、 config.h
+4. config.h是通过config.def.h在make过程中动态生成的，而且在clean的过程中不会删除，每次make clean install时候手动删除
+5. 打补丁
+  * 补丁一般都是基于某个tag的，切换到指定tag,然后创建一个临时分支，工作完成以后，切回master合并临时分支，删除临时分支
+  * 补丁形式推荐用git,git有两种，一种是am,不需要自动提交，一种是apply, 需要自动提交
 
 
 ## 3 Cool Terminal Tools Written In Rust
