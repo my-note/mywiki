@@ -33,6 +33,15 @@ is maintained by the W3C.
 this is note
 :::
 
+~~这里是删除~~
+++这里是下划线++
+
+### Tips
+
+::: Tips
+this is note
+:::
+
 ## 定义脚标
 
 Footnote 1 link[^wms]
