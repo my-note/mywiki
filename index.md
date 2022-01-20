@@ -1,6 +1,5 @@
-# Category
 
-![](http://placekitten.com/g/1200/400)
+![](http://placekitten.com/1200/400)
 
 * [About](post/about.md)
 * [VimWiki](post/VimWiki.md)
@@ -9,59 +8,8 @@
 * [GitHut加速](post/tools/9种提高GitHub国内访问速度的方案.md)
 * [linux](post/linux/readme.md)
 
-## 定义高亮
-
-==here is mark==
 
 
-## 定义缩写
-
-*[HTML]: Hyper Text Markup Language
-*[W3C]:  World Wide Web Consortium
-
-The HTML specification
-is maintained by the W3C.
-
-
-## 定义容器
-
-::: warning
-*here be dragons*
-:::
-
-
-::: warning
-this is note
-:::
-
-~~这里是删除~~
-++这里是下划线++
-
-### Tips
-
-::: Tips
-this is note
-:::
-
-
-!!! ERROR: Seriously
-    Watch out, something **bad** could happen.
-
-
-## 定义脚标
-
-Footnote 1 link[^wms]
-
-[^wms]: jfdksjfsdl
-
-
-## 定义超链接
-
-- [内联方式](http://www.baidu.com)
-- [应用方式][link1]
-
-
-[link1]: https://www.baidu.com
 
 
 

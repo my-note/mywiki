@@ -1,5 +1,5 @@
 
 
-![](http://placekitten.com/g/900/600)
+![](http://placekitten.com/900/400)
 
-[CentOS7安装JDK11保姆级教程](CentOS7安装JDK11保姆级教程.md)
+1. [CentOS7安装JDK11保姆级教程](CentOS7安装JDK11保姆级教程.md)
