@@ -7,6 +7,7 @@
 * [命令行工具](post/tools/cmd-tools.md)
 * [vim工具](post/tools/vim-plugins.md)
 * [GitHut加速](post/tools/9种提高GitHub国内访问速度的方案.md)
+* [linux](post/linux/readme.md)
 
 ## 定义高亮
 
@@ -41,6 +42,11 @@ this is note
 ::: Tips
 this is note
 :::
+
+
+!!! ERROR: Seriously
+    Watch out, something **bad** could happen.
+
 
 ## 定义脚标
 
