@@ -7,6 +7,8 @@
 * [vim工具](post/tools/vim-plugins.md)
 * [GitHut加速](post/tools/9种提高GitHub国内访问速度的方案.md)
 * [linux](post/linux/readme.md)
+* [事物篇](post/transaction/readme.md)
+* [Bash命令](post/bash-cmd/readme.md)
 
 
 
