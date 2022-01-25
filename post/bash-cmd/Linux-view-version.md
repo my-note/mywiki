@@ -5,6 +5,7 @@
 * uname -a
 * lsb_release -a
 * cat /proc/version
+* cat /etc/redhat-release
 
 
 

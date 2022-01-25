@@ -9,6 +9,7 @@
 * [linux](post/linux/readme.md)
 * [事物篇](post/transaction/readme.md)
 * [Bash命令](post/bash-cmd/readme.md)
+* [redis](post/redis/readme.md)
 
 
 
