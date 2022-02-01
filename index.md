@@ -10,6 +10,7 @@
 * [事物篇](post/transaction/readme.md)
 * [Bash命令](post/bash-cmd/readme.md)
 * [redis](post/redis/readme.md)
+* [Java基础篇](post/java/basics/readme.md)
 
 
 
