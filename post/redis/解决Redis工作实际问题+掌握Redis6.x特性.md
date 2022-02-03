@@ -25,7 +25,15 @@
     - [Redis集群架构](a-10016.md)
     - [cluster搭建](a-10017.md)
     - [查看cluster状态和信息](a-10018.md)
+    - [cluster集群测试](a-10019.md)
+    - [redis benchmark](a-10020.md)
+    - [springboot整合redis cluster](a-10021.md)
 * 第九章：集群高可用
+    - [动态增删节点](a-10022.md)
+    - [MOVED/ASK转向](a-10023.md)
+    - [自动故障转移](a-10024.md)
+    - [手动故障转移](a-10025.md)
+    - [redis迁移](a-10026.md)
 * 第十章：课程总结与回顾
 
 
