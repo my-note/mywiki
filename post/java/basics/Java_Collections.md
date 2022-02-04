@@ -2,17 +2,23 @@
 
     - map
         - [HashMap](HashMap.md)
-        - [LinkedHashMap](LinkedHashMap.md)
-        - [treeMap](treeMap.md)
-    - set
-        - [SortedSet](SortedSet.md)
+        - [LinkedHashMap](LinkedHashMap.md) 有序
+        - [treeMap](treeMap.md) 排序
+    - set: 无序、不可重复
+        - [HashSet](HashSet.md) hash表
+        - [LinkedHashSet](LinkedHashSet.md) 有序
+        - [TreeSet](TreeSet.md) 二叉树、支持排序
+    - list: 有序，可重复
+        - [ArrayList](ArrayList.md) 数组结构、set/get效率高
+        - [LinkedList](LinkedList.md) 双向链条结构、add/remove效率高
+        - [Vector](Vector.md) 数组结构、线程安全
 
 * guava
 
-    - [MultiMap](MultiMap.md)
-    - [MultiSet](MultiSet.md)
-    - [BiMap](BiMap.md)
-    - [Table](Table.md)
+    - [MultiMap](MultiMap.md) Map<T, List>
+    - [MultiSet](MultiSet.md) 无序 but 可重复
+    - [BiMap](BiMap.md) 双向map. 通过key-> value、亦可以value -> key
+    - [Table](Table.md) Map<String, Map<String, Object>>
 
 
 
