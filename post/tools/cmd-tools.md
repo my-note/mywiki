@@ -1,5 +1,13 @@
 # cmd-tools
 
+## apache2-utils
+
+安装apache2-utils来执行ab命令 apache2-utils并不是就是apache服务器，只是apache服务器的一个组件。
+
+* Ubuntu: apt-cache install apache2-util
+* CentOS: yum install httpd-tools
+* MacOS: 系统自带apache，查看版本信息：`apachectl -v`
+
 ## st
 
 1. clone source
