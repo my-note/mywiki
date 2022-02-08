@@ -109,6 +109,36 @@ public class B  {
 
 ![10013](img/10013.png)
 
+## 5. Thread和Object类中线程相关方法
+
+### 5.1 方法概览
+
+| 类               | 方法名                  | 说明                                    |
+| ---------------- | ---------------         | ---------------                         |
+| Thread           | sleep                   | 线程休眠，进入waiting、time waiting状态 |
+| Thread           | join                    | 等待其他线程执行完毕                    |
+| Thread           | yield                   | 放弃已近获取的cpu资源                   |
+| Thread           | currentThread           | 获取当前执行线程的引用                  |
+| Thread           | start                   | 启动线程                                |
+| Thread           | interrupt               | 通知线程停止                            |
+| Thread           | stop、suspend、resume   | 已废弃                                  |
+| Object           | wait、notify、notifyAll | 让线程暂时的休息和唤醒                  |
+
+
+![10016](img/10016.png)
+
+### 5.2 wait、notify、notifyAll
+
+![10015](img/10015.png)
+
+![10014](img/10014.png)
+
+
+
+
+
+
+
 
 
 
