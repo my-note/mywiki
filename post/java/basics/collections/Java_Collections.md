@@ -5,7 +5,7 @@
         - [LinkedHashMap](LinkedHashMap.md) 有序
         - [treeMap](treeMap.md) 排序
         - [HashTable](HashTable.md) HashMap + synchronized => 支持同步、线程安全、效率不高
-        - [CurrentHashMap](CurrentHashMap.md) 线程安全、效率高
+        - [ConcurrentHashMap](CurrentHashMap.md) 线程安全、效率高
     - set: 无序、不可重复
         - [HashSet](HashSet.md) hash表
         - [LinkedHashSet](LinkedHashSet.md) 有序
@@ -14,6 +14,10 @@
         - [ArrayList](ArrayList.md) 数组结构、set/get效率高
         - [LinkedList](LinkedList.md) 双向链条结构、add/remove效率高
         - [Vector](Vector.md) ArrayList + synchronized => 数组结构、线程安全、效率不高
+    - Queue: FIFO
+      - [PriorityQueue](PriorityQueue.md): 按照元素的大小重新排序
+      - [Deque](Deque.md): 双向队列 => 是队列也是栈 => 实现：LinkedList、ArrayDeque
+      - [ConcurrentLinkedQueue](ConcurrentLinkedQueue.md): 线程安全
 
 * guava
 
