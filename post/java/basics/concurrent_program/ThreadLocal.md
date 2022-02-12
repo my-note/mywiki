@@ -1,5 +1,13 @@
 # ThreadLocal
 
+
+![ThreadLocal使用场景:并发数据安全 & 参数存储代码优雅](img/ThreadLocal使用场景.png)
+
+![ThreadLocal原理和主要方法](img/ThreadLocal原理和主要方法.png)
+
+![ThreadLocal注意项](img/ThreadLocal注意项.png)
+
+
 ## ThreadLocal是什么
 
 * 定义：提供线程<font color="red">局部变量</font>，一个线程局部变量在多个线程中，分别有独立的值（副本）.
