@@ -17,7 +17,7 @@ CAS(全称Compare And Swap, 即"比较并交换")。CAS 指令包含 3 个参数
 > DoubleAccumulator、DoubleAdder、LongAccumulator 和 LongAdder，这四个类仅仅用来执行累加操作，相比原子化的基本数据类型，速度更快，但是不支持 compareAndSet() 方法。如果你仅仅需要累加操作，使用原子化的累加器性能会更好。
 
 
-
+![Atomic20220213](img/Atomic20220213.png)
 
 
 
