@@ -6,6 +6,7 @@
     - [配置文件](a-10003.md)
     - [Redis客户端](a-10004.md)
 * 第三章：Redis基础数据类型与基本使用
+    - [key & string 类型结构](a-10027.md)
 * 第四章：Redis高阶类型与高级应用
     - [redis之lua](a-10005.md)
     - [redisson](a-10006.md)
