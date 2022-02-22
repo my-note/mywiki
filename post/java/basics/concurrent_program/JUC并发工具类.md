@@ -20,7 +20,7 @@
     * [ConcurrentSkipListMap: 是一个Map,使用跳表的数据结构进行快速查找](ConcurrentSkipListMap.md)
 * 控制并发流程
     * [CountDownLatch倒计时门闩](CountDownLatch倒计时门闩.md)
-    * [Semaphore信号量](Semaphore信号量.md)
+    * [Semaphore信号量:许可证,限流（限制的是线程数量）](Semaphore信号量.md)
     * [Condition接口(又称条件对象)](Condition接口.md)
     * [CyclicBarrier循环栅栏](CyclicBarrier循环栅栏.md)
 
