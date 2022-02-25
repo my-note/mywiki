@@ -1,6 +1,3 @@
-
-![](http://placekitten.com/1200/400)
-
 * [About](post/about.md)
 * [VimWiki](post/VimWiki.md)
 * [命令行工具](post/tools/cmd-tools.md)
@@ -11,6 +8,7 @@
 * [Bash命令](post/bash-cmd/readme.md)
 * [redis](post/redis/readme.md)
 * [Java基础篇](post/java/basics/readme.md)
+* [JVM](post/JVM/readme.md)
 * [Spring](post/Spring/readme.md)
 * [网络编程](post/socket/readme.md)
 * [算法与数据结构](post/算法与数据结构/readme.md)
