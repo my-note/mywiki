@@ -3,6 +3,12 @@
 
 
 * [Netty入门之WebSocket](Netty入门之WebSocket.md)
+* [NettySpringboot仿微信聊天全栈实战](NettySpringboot仿微信聊天全栈实战.md)
+
+
+* [官网](https://netty.io/) 
+* [GitHub](https://github.com/netty/netty)
+
 
 ## Netty是什么
 
@@ -25,6 +31,8 @@
   * 解决传输问题：粘包、半包现象
   * 支持流量整形
   * 完善的断连、Idle等异常处理等
+  * 并发高 -NIO
+  * 传输快 - 零拷贝
 
 * Netty API 更友好更强大：
 
@@ -36,12 +44,25 @@
   * 隔离JDK NIO的实现变化：nio -> nio2(aio) -> ...
   * 屏蔽了JDK NIO的实现细节
 
+## 关于版本
+
+* [https://netty.io/wiki/user-guide.html](https://netty.io/wiki/user-guide.html)
+* 3.x -> jdk5
+* 4.x -> 当前维护最新
+* 5.x -> 停止维护
 
 
 
+## Netty线程模型
+
+* 单线程模型
+* 多线程模型
+* 主从线程模式（推荐：高效）
 
 
-
+![image_2022-02-26-16-12-07](img/image_2022-02-26-16-12-07.png)
+![image_2022-02-26-16-09-11](img/image_2022-02-26-16-09-11.png)
+![image_2022-02-26-16-10-21](img/image_2022-02-26-16-10-21.png)
 
 
 
