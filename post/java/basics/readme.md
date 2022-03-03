@@ -7,7 +7,7 @@
 * [Java Collections 集合](collections/Java_Collections.md)
 * [Java 并发编程](concurrent_program/Java_concurrent_program.md)
 * [Java 设计模式](design_pattern/readme.md)
-
+* [【极客时间】深入剖析 Java 新特性](深入剖析Java新特性/readme.md)
 
 
 
