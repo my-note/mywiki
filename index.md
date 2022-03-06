@@ -1,3 +1,7 @@
+![](http://placekitten.com/800/200) 
+
+
+
 * [About](post/about.md)
 * [VimWiki](post/VimWiki.md)
 * [命令行工具](post/tools/cmd-tools.md)
@@ -14,6 +18,7 @@
 * [算法与数据结构](post/算法与数据结构/readme.md)
 
 
+![图片](https://mmbiz.qpic.cn/mmbiz_gif/crPesQVeyKLZrFANvRZEuQYXI3a4IOibBQoznS1Fto8kiaPRooKD6xia5xlapXtokUG3gVLicbKTgDyyOTWNohv3iaA/640?wx_fmt=gif&wxfrom=5&wx_lazy=1)
 
 
 
