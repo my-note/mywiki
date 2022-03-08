@@ -1,4 +1,3 @@
-![](http://placekitten.com/800/200) 
 
 
 
