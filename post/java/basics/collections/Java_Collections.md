@@ -19,12 +19,14 @@
       - [Deque](Deque.md): 双向队列 => 是队列也是栈 => 实现：LinkedList、ArrayDeque
       - [ConcurrentLinkedQueue](ConcurrentLinkedQueue.md): 线程安全
 
-* guava
+* [guava](../guava/Guava中这些Map的优秀操作让我的代码量减少了50%25.md)
 
     - [MultiMap](MultiMap.md) Map<T, List>
     - [MultiSet](MultiSet.md) 无序 but 可重复
     - [BiMap](BiMap.md) 双向map. 通过key-> value、亦可以value -> key
     - [Table](Table.md) Map<String, Map<String, Object>>
+    - [RangeMap](RangeMap.md) Map<[30, 60], "A"> -> get(45)>>>A
+    - [ClassToInstanceMap](ClassToInstanceMap.md) <class, instance> 好处：1. 不用强制类型转换还支持泛型
 
 
 

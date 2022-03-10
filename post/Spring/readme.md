@@ -8,6 +8,7 @@
 ##### 一文在手,天下我有
 * [Springboot版本号](Springboot版本号.md)
 * [StopWatch——让Spring来帮你计算接口时间](StopWatch——让Spring来帮你计算接口时间.md)
+* [都在建议，不要直接使用@Async注解，为什么？](都在建议，不要直接使用@Async注解，为什么？.md)
 
 
 ##### 路径匹配器
