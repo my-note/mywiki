@@ -1,5 +1,12 @@
 # VimWiki
 
+
+## pandoc
+
+```bash
+$ pandoc -f markdown -t html -o demo.html demo.md
+```
+
 ## nginx
 
 ```bash
