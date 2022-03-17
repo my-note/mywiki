@@ -7,9 +7,9 @@
         - [HashTable](HashTable.md) HashMap + synchronized => 支持同步、线程安全、效率不高
         - [ConcurrentHashMap](CurrentHashMap.md) 线程安全、效率高
     - set: 无序、不可重复
-        - [HashSet](HashSet.md) hash表
+        - [HashSet](HashSet.md) hash表、去重、无序
         - [LinkedHashSet](LinkedHashSet.md) 有序
-        - [TreeSet](TreeSet.md) 二叉树、支持排序
+        - [TreeSet](TreeSet.md) 二叉树(平衡二叉树更具体一点就是红黑树)、排序、去重
     - list: 有序，可重复
         - [ArrayList](ArrayList.md) 数组结构、set/get效率高
         - [LinkedList](LinkedList.md) 双向链条结构、add/remove效率高

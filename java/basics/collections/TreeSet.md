@@ -1,9 +1,9 @@
 # TreeSet
 
-* TreeSet是SortedSet<<inter>>的唯一实现类
+* TreeSet是`SortedSet<<inter>>`的唯一实现类
 * 支持排序（自然排序、指定排序）
 * 自然排序是默认排序
-* 二叉树实现
+* 二叉树实现,平衡二叉树更具体一点是红黑树
 * 不允许放入null
 * 不支持相同元素（去重），判断元素是否相同是通过equals是否返回0
 
