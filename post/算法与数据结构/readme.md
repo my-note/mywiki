@@ -1,4 +1,3 @@
-# readme
 
 
 * [Imooc算法与数据结构体系课](Imooc算法与数据结构体系课.md)
@@ -6,7 +5,6 @@
 
 
 
-![图片](https://mmbiz.qpic.cn/mmbiz_gif/crPesQVeyKLZrFANvRZEuQYXI3a4IOibBQoznS1Fto8kiaPRooKD6xia5xlapXtokUG3gVLicbKTgDyyOTWNohv3iaA/640?wx_fmt=gif&wxfrom=5&wx_lazy=1)
 
 
 
