@@ -10,7 +10,7 @@
 * [JVM](JVM/readme.md)
 * [Spring](Spring/readme.md)
 * [网络编程](socket/readme.md)
-* [算法与数据结构](算法与数据结构/readme.md)
+* [数据结构与算法](算法与数据结构/readme.md)
 * [mysql](mysql/readme.md)
 
 
