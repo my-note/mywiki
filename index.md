@@ -7,6 +7,7 @@
 * [Bash命令](bash-cmd/readme.md)
 * [redis](redis/readme.md)
 * [Java基础篇](java/basics/readme.md)
+* [Java高级篇](java/advance/readme.md)
 * [JVM](JVM/readme.md)
 * [Spring](Spring/readme.md)
 * [网络管理](network/readme.md)
