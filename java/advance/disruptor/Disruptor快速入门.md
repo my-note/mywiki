@@ -100,20 +100,24 @@ disruptor 是 LMAX 公司开发的一个**高性能队列**，其作用和**阻�
 
 ### 3.1 Ring Buffer
 
+* 存储数据的容器
+* 它是一个环（首尾相接的环）
+* 它用在不同上下文（线程）间传递数据的buffer
+* RingBuffer拥有一个序号，这个序号指向数组中下一个可用的元素
+* 随着不停的填充这个buffer(可能也会有相应的读取),这个序号会一直增长，直到绕过这个环
+
 提到disruptor一般都会提到Ring Buffer(环形队列)是它的特点，实际上从3.0版本之后，环形队列只是用来存储和更新事件数据，在其他更复杂的场景下，用户可以通过自定义操作将其替换掉；
 
 > 简单的说，disruptor官方认为Ring Buffe是核心概念（Core Concepts），但不是特色( key features)
 
 ### 3.2 Sequence
 
+一个递增序号用于标识进度（可以看成是AtomicLong）但是功能更强大，可以防止CPU缓存伪共享
 
-distuptor 使用 sequence 识别位置。每个消费者（事件处理器Event Processor）都维护一个序列 Sequence，就像 Disruptor 本身一样。大多数并发代码依赖于这些序列值的移动，因此序列支持 AtomicLong 的许多当前特性。 事实上，两者之间唯一真正的区别是序列包含额外的功能，以防止序列和其他值之间的错误共享。
+1. Sequence, 通过顺序递增的序号来编号，管理进行交换的数据（事件）对数据（事件）的处理过程，总是沿着序号逐个递增处理
+2. 一个Sequence用于跟踪标识某个特定的事件处理者（RingBuffer/Consumer/Producer）的处理进度
+3. Sequence可以看成AtomicLong, 用于标识进度, 但是更加强大, 可以防止不同Sequence之间cpu缓存伪共享
 
-通过顺序递增的序号来编号管理通过其进行交换的数据（事件），对数据(事件)的处理过程总是沿着序号逐个递增处理。一个 Sequence 用于跟踪标识某个特定的事件处理者( RingBuffer/Consumer )的处理进度。
-
-虽然一个 AtomicLong 也可以用于标识进度，但定义 Sequence 来负责该问题还有另一个目的，那就是防止不同的 Sequence 之间的CPU缓存伪共享(Flase Sharing)问题。
-
-> 注：这是 Disruptor 实现高性能的关键点之一，网上关于伪共享问题的介绍已经汗牛充栋，在此不再赘述）。
 
 ### 3.3 Sequencer
 
@@ -121,23 +125,28 @@ Sequencer 是 Disruptor 的真正核心。此接口有两个实现类 SingleProd
 
 ### 3.4 Sequence Barrier
 
-用于保持对RingBuffer的 main published Sequence 和Consumer依赖的其它Consumer的 Sequence 的引用。Sequence Barrier 还定义了决定 Consumer 是否还有可处理的事件的逻辑。
+用于保持对RingBuffer的生产者和消费者之间平衡关系的。 Sequence Barrier 还定义了决定 Consumer 是否还有可处理的事件的逻辑。
 
 
 ### 3.5 Wait Strategy
 
-定义 Consumer 如何进行等待下一个事件的策略。
+决定一个消费者将如何等待生产者将Event放入Disruptor.
 
-> 注：Disruptor 定义了多种不同的策略，针对不同的场景，提供了不一样的性能表现
-
+* BlockingWaitingStrategy: 默认策略。最低效的策略，对cpu消耗最小，并且在不同的部署环境中能提供更加一致的性能表现(用到了锁，disruptor中唯一用到锁的地方)
+* SleepringWaitStrategy: 性能和BlockingWaitingStrategy差不多，cpu消耗也类似，对生产者线程的影响小，适用于异步日志类似的场景
+* YieldingWaitStrategy：性能最好，适用于低延迟的系统。在要求极高性能且事件处理线程数小于cpu核心数的场景中，推荐使用此策略。
 
 ### 3.6 Event
 
-在 Disruptor 的语义中，生产者和消费者之间进行交换的数据被称为事件(Event)。它不是一个被 Disruptor 定义的特定类型，而是由 Disruptor 的使用者定义并指定。
+* 从生产到消费过程中，实际处理的数据对象
+* 没有代码定义Event, 完全由用户定义
 
 ### 3.7 EventProcessor
 
-EventProcessor 持有特定消费者(Consumer)的 Sequence，并提供用于调用事件处理实现的事件循环(Event Loop)。
+1. 主要事件循环, 处理Disruptor中的Event, 拥有消费者的Sequence
+2. 他有一个实现类是BatchEventProcessor, 包含了event loop有效的实现，并且将回调到一个EventHandler接口的实现对象
+
+
 
 ### 3.8 EventHandler
 

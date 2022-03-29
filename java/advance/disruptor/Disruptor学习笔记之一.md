@@ -13,6 +13,9 @@
 
 ![](img/image_2022-03-29-11-34-57.png)
 
+> 如果没有设置sequence才是上面这种生产消费的模式；
+> 如果 this.sequenceCallback.set(sequence); 就消费一个后立马会生产一个
+
 5. disruptor vs queue
 
   > 1. 广播。disruptor可以同时将event广播给几个独立的消费者同时消费。几个消费者相互独立。多个消费者可以顺序sort并行parallel读取event
@@ -21,27 +24,6 @@
   > 4. 无锁算法。所有内存可见性和正确性保证都是使用内存barrier和cas操作实现的。
 
 ![](img/image_2022-03-29-11-45-04.png)
-
-
-                                    +------------+                             +----------+
-               +------------------> |  消费者|1  +----+                   +--> | 消费者|4 |
-               |                    +------------+    |   +---------+     |    +----------+
-    +----------+                                      +-> | 消费者|3+-----+
-               |                                      |   +---------+     |
-               |                    +------------+    |                   |    +----------+
-               +------------------> |  消费者|2  +----+                   +--> | 消费者|5 |
-                                    +------------+                             +----------+
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -76,11 +58,19 @@ import java.util.concurrent.TimeUnit;
 @Slf4j
 public class OrderEventHandler implements EventHandler<OrderEvent> {
 
+    private Sequence sequenceCallback;
+
+
+    @Override
+    public void setSequenceCallback(final Sequence sequenceCallback) {
+        this.sequenceCallback = sequenceCallback;
+    }
 
     @Override
     public void onEvent(OrderEvent event, long sequence, boolean endOfBatch) throws Exception {
         log.info("event:{}, sequence:{}, endOfBatch:{}", event, sequence, endOfBatch);
         TimeUnit.MILLISECONDS.sleep(1000);
+        this.sequenceCallback.set(sequence);
     }
 }
 ```
@@ -90,9 +80,19 @@ import com.example.disruptor.event.OrderEvent;
 import com.lmax.disruptor.EventHandler;
 
 public class ClearingEventHandler implements EventHandler<OrderEvent> {
+
+    private Sequence sequenceCallback;
+
+
+    @Override
+    public void setSequenceCallback(final Sequence sequenceCallback) {
+        this.sequenceCallback = sequenceCallback;
+    }
+
     @Override
     public void onEvent(OrderEvent event, long sequence, boolean endOfBatch) throws Exception {
         event.clear();
+        this.sequenceCallback.set(sequence);
     }
 }
 ```
