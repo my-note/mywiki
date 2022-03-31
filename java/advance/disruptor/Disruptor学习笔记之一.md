@@ -134,10 +134,11 @@ public class OrderEventProducer {
         //绑定handler消费者
         disruptor.handleEventsWith(new OrderEventHandler())
                 .then(new ClearingEventHandler());
+        //设置异常处理类。。。
+        disruptor.setDefaultExceptionHandler();
+        disruptor.handleExceptionsFor().with(); 
         //启动
-        disruptor.start();
-        this.ringBuffer = disruptor.getRingBuffer();
-
+        this.ringBuffer = disruptor.start();
     }
 
     public void onData(Long orderId) {
