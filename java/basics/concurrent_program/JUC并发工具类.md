@@ -28,6 +28,8 @@
     * [LockSupport](LockSupport.md)
     * [CyclicBarrier循环栅栏](CyclicBarrier循环栅栏.md)
     * [ForkJoin](ForkJoin.md)
+    * [StampedLock](StampedLock.md)
+    * [Exchanger](Exchanger.md)
 
 
 | 类               | 作用                                                                                       | 说明                                                               |
