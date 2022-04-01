@@ -12,7 +12,9 @@
   * [CompletableFuture](CompletableFuture.md)
   * [CompletionService](CompletionService.md)
 
-* [锁工具](lock.md)
+* [锁工具 ReentrantLock](lock.md)
+  * [AQS](AQS.md)
+
 * 并发集合
     * [ConcurrentHashMap：线程安全的HashMap](ConcurrentHashMap线程安全的HashMap.md)
     * [CopyOnWriteArrayList: 线程安全的List](CopyOnWriteArrayList线程安全的List.md)
@@ -37,7 +39,6 @@
 | Condition        | 可以控制线程的“等待”和“唤醒”                                                               | 是Object.wait()的升级版                                            |
 
 
-* [AQS](AQS.md)
 
 
 
