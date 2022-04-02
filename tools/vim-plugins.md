@@ -6,6 +6,19 @@
 [插件管理](https://vimawesome.com/) 
 
 
+
+## jlanzarotta/bufexplorer
+
+浏览缓存区文件
+
+* <Leader>be normal open
+* <Leader>bt toggle open / close
+* <Leader>bs force horizontal split open
+* <Leader>bv force vertical split open
+
+
+
+
 ## vim-visual-multi
 
 
