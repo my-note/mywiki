@@ -25,6 +25,17 @@
 > 分析Netty reactor线程处理过程，包括事件监听，事件处理，常规任务处理和定时任务处理
 
 
+* new NioEventLoopGroup() => 线程组，默认2*cpu
+
+
+## 新连接接入
+
+> 分析新连接接入以及绑定reactor线程，绑定到selector的过程
+
+
+检测新连接 -> 创建NioSocketChannel(客户端Channel) -> 分配线程(NioEventLoop)及注册selector -> 向selector注册读事件
+
+
 
 
 
