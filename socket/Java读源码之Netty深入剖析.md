@@ -13,9 +13,16 @@
 ![](img/image_2022-02-28-20-15-16.png)
 
 
+## Netty 服务端启动
+
+> 分析服务端启动流程，包括服务端Channel的创建，初始化，以及注册到selector
+
+![](img/image_2022-04-03-17-31-35.png)
 
 
+## NioEventLoop
 
+> 分析Netty reactor线程处理过程，包括事件监听，事件处理，常规任务处理和定时任务处理
 
 
 
