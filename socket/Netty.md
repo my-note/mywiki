@@ -5,6 +5,7 @@
 * [Netty入门之WebSocket](Netty入门之WebSocket.md)
 * [NettySpringboot仿微信聊天全栈实战](NettySpringboot仿微信聊天全栈实战.md)
 * [Java读源码之Netty深入剖析](Java读源码之Netty深入剖析.md)
+* [黑马程序员Netty全套教程，全网最全Netty深入浅出教程，Java网络编程的王者](黑马程序员Netty全套教程，全网最全Netty深入浅出教程，Java网络编程的王者.md)
 
 
 * [官网](https://netty.io/) 
