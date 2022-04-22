@@ -421,6 +421,18 @@ public class RepositoryController {
 
 ## 事件
 
+按照所处在流程中的位置：
+* 启动事件
+* 中间事件
+* 边界事件
+* 结束事件
+
+按照触发的类型分类：
+* 定时事件
+* 消息事件
+* 错误事件
+* 信号事件
+
 ### 1. 空启动事件
 
 1. 手动启动
@@ -465,6 +477,186 @@ public class RepositoryController {
 ### 5. 定时器捕捉中间事件
 
 定时器捕获中间事件（timer intermediate catching event）的行为像是跑表。当执行到达捕获事件时，启动定时器；当定时器触发时（例如在一段时间间隔后），沿定时器中间事件的出口顺序流继续执行。
+
+### 6. 消息启动事件
+
+
+![](img/image_2022-04-22-09-55-14.png)
+
+```java
+@Test
+public void startProcessInstance() throws InterruptedException {
+
+    String messageName = "msg0002";
+    RuntimeService runtimeService = processEngine.getRuntimeService();
+    runtimeService.startProcessInstanceByMessage(messageName);
+    System.out.println("启动时间：" + DateUtil.now());
+    TimeUnit.MINUTES.sleep(1);
+}
+```
+
+
+### 7. 消息中间事件
+
+![](img/image_2022-04-22-10-23-31.png)
+
+
+```java
+@Test
+public void messageEvent() throws InterruptedException {
+
+    String messageName = "msg118";
+    String executionId = "187503";
+    RuntimeService runtimeService = processEngine.getRuntimeService();
+    runtimeService.messageEventReceived(messageName, executionId);
+    System.out.println("启动时间：" + DateUtil.now());
+    TimeUnit.SECONDS.sleep(3);
+}
+```
+
+
+### 8. 消息边界事件
+
+如果人工处理在消息订阅前没有处理就会触发边界事件
+
+![](img/image_2022-04-22-10-43-49.png)
+
+
+### 9. 错误开始事件
+
+不能用户启动流程实例，只用于触发事件子流程
+
+![](img/image_2022-04-22-11-15-24.png)
+
+
+### 10. 错误边界事件
+
+![](img/image_2022-04-22-11-30-54.png)
+
+
+### 11. 信号开始事件
+
+![](img/image_2022-04-22-13-40-02.png)
+
+```java
+@Test
+public void signalEvent() throws InterruptedException {
+
+
+    RuntimeService runtimeService = processEngine.getRuntimeService();
+    runtimeService.signalEventReceived("signal121");
+    TimeUnit.SECONDS.sleep(2);
+
+}
+```
+
+### 12. 信号中间事件
+
+![](img/image_2022-04-22-13-49-17.png)
+
+
+
+
+```java
+    @Test
+    public void signalEvent() throws InterruptedException {
+
+
+        RuntimeService runtimeService = processEngine.getRuntimeService();
+        runtimeService.signalEventReceived("signal122");
+        TimeUnit.SECONDS.sleep(2);
+
+    }
+```
+
+> 1. global作用域的会全部被触发，不指定执行实例ID
+> 2. processInstance作用域的，要钉钉实行实例的ID才会触发
+> 3. 信号启动事件global和processInstance作用域的，即使不指定执行实例的ID都会触发
+
+
+### 13. 信号中间抛出事件
+
+
+
+
+![](img/image_2022-04-22-14-09-37.png)
+
+> 启动实例就可以了，自动抛出事件，自动捕获事件
+
+### 14. 信号边界事件
+
+![](img/image_2022-04-22-14-21-26.png)
+
+
+
+### 15. 错误终止事件
+
+![](img/image_2022-04-22-14-43-33.png)
+
+
+### 16. 终止结束事件
+
+![](img/image_2022-04-22-15-27-39.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
