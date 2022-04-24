@@ -600,41 +600,172 @@ public void signalEvent() throws InterruptedException {
 
 
 
+## 多人会签
+
+一个任务需要多个人来处理（串行、并行）
+
+![](img/image_2022-04-23-13-24-22.png)
+
+完成条件
+```java
+
+
+import org.flowable.engine.delegate.DelegateExecution;
+import org.springframework.stereotype.Component;
+
+import java.io.Serializable;
+
+
+@Component("multiInstanceCompleteTask")
+public class MultiInstanceCompleteTask implements Serializable {
+
+
+
+    public boolean completeTask(DelegateExecution execution){
+        System.out.println("总的会签任务数量：" + execution.getVariable("nrOfInstances"));
+        System.out.println("当前获取到的会签任务数量：" + execution.getVariable("nrOfActiveInstances"));
+        //有一个人统一就通过
+        Boolean flag = (Boolean) execution.getVariable("flag");
+        System.out.println("当前意见：" + flag);
+        return flag;
+    }
+
+
+}
+
+```
+
+监听器
+```java
+
+import org.flowable.engine.delegate.DelegateExecution;
+import org.springframework.stereotype.Component;
+
+import java.io.Serializable;
+@Component("multiInstanceTaskListener")
+public class MultiInstanceTaskListener implements Serializable {
+
+
+    public void completeListener(DelegateExecution execution){
+        System.out.println("任务：" + execution.getId());
+        System.out.println("persons：" + execution.getVariable("persons"));
+        System.out.println("person: " + execution.getVariable("person"));
+    }
+
+
+
+}
+
+```
+
+启动流程
+
+```java
+        Map<String, Object> vars = new HashMap<>();
+        vars.put("persons", Arrays.asList("001", "002", "003"));
+        ProcessInstance processInstance = runtimeService.startProcessInstanceById("a128:1:220010", vars);
+        TimeUnit.MILLISECONDS.sleep(60000);
+        return processInstance.getId();
+```
+
+完成任务
+
+```java
+Map<String, Object> vars = new HashMap<>();
+vars.put("flag", true);
+taskService.complete("230021", vars);
+```
+
+
+## 动态表单
+
+表单：内置、外置
+
+内置表单：表单绑定刚在任务上，每一个要求表单的任务都必须建立相同的表单，否则看不到表单数据
+外置表单：将表单外置，涉及到表单的任务只需要引用这个表单就可以了
+
+获取内置表单信息
+
+```java
+StartFormData startFormData = formService.getStartFormData("a130:1:220049");
+List<FormProperty> list = startFormData.getFormProperties();
+for (FormProperty formProperty : list) {
+    System.out.println("formProperty.getId() = " + formProperty.getId());
+    System.out.println("formProperty.getName() = " + formProperty.getName());
+    System.out.println("formProperty.getType() = " + formProperty.getType());
+    System.out.println("formProperty.getValue() = " + formProperty.getValue());
+}
+```
+
+
+
+![](img/image_2022-04-23-14-58-24.png)
+
+
+![](img/image_2022-04-23-15-01-31.png)
+
+**没有绑定表单的是查询不到表单数据的**
+
+启动表单流程
+
+方式一
+```java
+RuntimeService runtimeService = processEngine.getRuntimeService();
+Map<String, Object> vars = new HashMap<>(8);
+vars.put("new_property_1", "aaa");
+vars.put("new_property_2", new Date());
+vars.put("new_property_3", 123L);
+runtimeService.startProcessInstanceById("a130:1:220049", vars);
+```
+方式二
+
+```java
+FormService formService = processEngine.getFormService();
+Map<String, String> vars = new HashMap<>(8);
+vars.put("new_property_1", "aaa");
+vars.put("new_property_2", "01-12-2021 08:00");//MM-dd-yyyy hh:mm
+vars.put("new_property_3", "123");
+formService.submitStartFormData("a130:1:220049", vars);
+```
+
+
+查询表单数据
+
+
+```java
+FormService formService = processEngine.getFormService();
+TaskFormData taskFormData = formService.getTaskFormData("237512");
+List<FormProperty> list = taskFormData.getFormProperties();
+for (FormProperty formProperty : list) {
+    System.out.println("formProperty.getId() = " + formProperty.getId());
+    System.out.println("formProperty.getName() = " + formProperty.getName());
+    System.out.println("formProperty.getValue() = " + formProperty.getValue());
+}
+```
+更新form表单数据
+
+```java
+FormService formService = processEngine.getFormService();
+Map<String, String> vars = new HashMap<>(8);
+vars.put("new_property_1", "bbb");
+vars.put("new_property_2", "01-01-2021 09:00");
+vars.put("new_property_3", "321");
+formService.saveFormData("237512", vars);
+```
+
+## 回退
+
+### 串行回退
 
 
 
 
+### 并行回退
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+### 子流程回退
 
 
 
